@@ -1,0 +1,303 @@
+# coding=utf-8
+# 创建并初始化munu_list列表
+menu_list = []
+while True:
+    try:
+        food = input()
+        menu_list.append(food)
+    except:
+        break
+# 请在此添加代码，对menu_list进行元组转换以及元组计算等操作，并打印输出元组及元组最大的元素
+###### Begin ######
+#######  End #######
+
+# coding=utf-8
+# 创建并初始化munu_dict字典
+menu_dict = {}
+while True:
+    try:
+        food = input()
+        price = int(input())
+        menu_dict[food]= price
+    except:
+        break
+#请在此添加代码，实现对menu_dict的添加、查找、修改等操作，并打印输出相应的值
+###### Begin ######
+
+
+# coding=utf-8
+# 创建并初始化munu_dict字典
+menu_dict = {}
+while True:
+    try:
+        food = input()
+        price = int(input())
+        menu_dict[food]= price
+    except:
+        break
+#请在此添加代码，实现对menu_dict的遍历操作并打印输出键与值
+###### Begin ######
+#######  End #######
+
+
+元组与列表
+创建元组
+访问元组
+修改元组
+元组内置函数
+
+访问字典中的值
+添加键-值对
+修改字典中的值
+删除键-值对
+
+遍历字典中的键-值对
+遍历字典中的键
+遍历字典中的值
+
+
+列表中存储字典
+字典中存储列表
+字典中存储字典
+
+
+
+元组与列表
+元组与列表很相似，两者之间的差别在于，列表在初始化后其中的元素还可以进行增删改等操作，但是元组在初始化后其中的元素不能进行更改，列表在赋值时使用方括号[]，而元组在赋值时使用小括号()。因为元组具有不可变的特性，所以在能用元组替代列表的地方最好都使用元组，这样代码更安全。
+
+创建元组
+元组创建很简单，只需要在括号()中添加元素，元素之间用逗号隔开。元组中只包含单个元素时，需要在该元素后面添加逗号，例如：
+
+menu1 = ('meat','fish','chicken')
+
+menu2 = ('meat',)
+
+访问元组
+元组和列表一样，可以使用下标索引来访问元组中的值，例如:
+
+menu = ('meat','fish','chicken','carrot')
+print(menu[0])
+print(menu[1:3])
+输出结果：
+
+meat
+
+('fish', 'chicken')
+
+修改元组
+元组中的元素值是不可以修改的，如果强行修改会报错，例如如果我们想修改元组menu中的某个值：
+
+menu = ('meat','fish','chicken','carrot')
+menu[0] = 'pizza'
+print(menu[0])
+输出结果：
+
+TypeError: 'tuple' object does not support item assignment
+
+系统会自动报错，元组中的元素值不支持修改。
+
+元组内置函数
+元组和列表一样，都有一些内置函数方便编程。例如：
+
+len(tuple)：计算元组中元素个数。
+
+max(tuple)：返回元组中元素的最大值。
+
+min(tuple)：返回元组中元素的最小值。
+
+tuple(seq)：将列表转换为元组。
+
+元组中的元素是不能改变的，它也没有append()，insert()这样的方法。但其他获取元素的方法和列表是一样的。
+
+
+
+
+
+字典是Python最强大的数据类型之一，通过键-值对的方式建立数据对象之间的映射关系。字典的每个键-值对用冒号:分割，每个键-值对间用逗号,分隔开，字典是包含在{}中。列表格式如下：
+
+d = { key1 : value1, key2 : value2 }
+
+每个键都与一个值相关联，我们可以使用键来访问与之相关联的值。与键相关联的值可以是数字、字符串、列表乃至字典。事实上，可将任何Python对象用作字典中的值。
+
+访问字典中的值
+要获取与键相关联的值，可依次指定字典名和放在方括号内的键，如下所示：
+
+# 创建并初始化menu字典
+menu = {'fish':40, 'pork':30, 'potato':15, 'noodles':10}
+# 获取并返回menu字典中键'fish'键对应的值
+print(menu['fish'])
+输出结果：
+
+40
+
+添加键-值对
+字典是一种动态数据结构，可随时在字典中添加键—值对。要添加键—值对时，可依次指定字典名、键和键对应的值。
+
+下面在字典menu中添加两道菜的菜名和价格：
+
+# 创建并初始化menu字典
+menu = {'fish':40, 'pork':30, 'potato':15, 'noodles':10}
+# 向menu字典中添加菜名和价格
+menu['juice'] = 12
+menu['egg'] = 5
+#输出新的menu
+print(menu)
+输出结果：
+
+{'fish': 40,'pork': 30,'potato': 15,'noodles': 10, 'juice': 12,'egg': 5}
+
+新的menu字典包含6个键-值对，新增加的两个键-值对（菜名和对应价格）添加在了原有键-值对的后面，注意字典中键-值对的排列顺序和添加顺序没有必然联系，Python不关心字典中键-值对的排列顺序，而只关心键与值得对应关系。
+
+同理，字典和列表一样，可以先创建一个空字典，然后可以不断向里面添加新的键-值对。
+
+修改字典中的值
+字典和列表一样，里面的值都是可以修改的。要修改字典中的值，可直接指定字典中的键所对应的新值。例如，将menu中的fish价格改为50。
+
+# 创建并初始化menu字典
+menu = {'fish':40, 'pork':30, 'potato':15, 'noodles':10}
+# 修改menu字典中菜fish的价格
+menu['fish'] = 50
+# 打印输出新的menu
+print(menu)
+输出结果：
+
+{'fish': 50, 'pork': 30, 'potato': 15, 'noodles': 10}
+
+删除键-值对
+我们可以通过del方法删除字典中不需要的键-值对，使用del方法时，要指定字典名和要删除的键。
+
+例如，在menu菜单中删除键noodles和它的值。
+
+# 创建并初始化menu字典
+menu = {'fish':40, 'pork':30, 'potato':15, 'noodles':10}
+# 删除noodles键值对
+del menu['noodles']
+# 打印输出新的menu
+print(menu)
+输出结果：
+
+{'fish': 40, 'pork': 30, 'potato': 15}
+
+
+遍历字典中的键-值对
+Python为字典类型提供了items()方法，items()方法会将字典里的所有的键与值一起返回，
+
+例如，餐馆有一个菜单包含了菜名和价格信息。菜名和价格顾客都需要知道，可以通过遍历输出menu字典的键和值来实现。
+
+#coding = utf-8
+# 创建并初始化menu菜单字典
+menu={'fish':'40','pork':'30','potato':'20','lamb':'50'}
+# 利用items()方法遍历输出键和值
+for key,value in menu.items():
+    print('\nkey:'+key)
+    print('value:'+value)
+输出结果：
+
+key:fish
+value:40
+key:pork
+value:30
+key:potato
+value:20
+key:lamb
+value:50
+输出结果表示，items()方法每次都将对应的键和值指定到key和value变量中，然后用for循环输出。
+
+遍历字典中的键
+对于餐馆中的厨师来说，他们并不想要知道菜的价格，只需要知道菜名然后将其做出来就行。所以对于厨师来说，我们需要遍历menu字典中的所有菜名。
+
+Python为字典类型内置了keys()方法，该方法会将字典里的键遍历出来，例如：
+
+# 创建并初始化menu菜单字典
+menu={'fish':'40','pork':'30','potato':'20','lamb':'50'}
+# 利用keys()方法遍历输出键
+for key in menu.keys():
+    print('food_name:'+key)
+输出结果：
+
+food_name:fish
+
+food_name:pork
+
+food_name:potato
+
+food_name:lamb
+
+输出结果表示，keys()方法每次都是将menu菜单中的键输出，显示菜名。
+
+遍历字典中的值
+对于餐馆中的收银员来说，他们可能并不想知道菜单的菜名，只需要知道菜的价格然后收账即可。所以对于收银员来说，我们需要遍历menu字典中的所有菜的价格。
+
+Python为字典类型内置了values()方法，该方法会将字典里的值遍历出来，例如：
+
+# 创建并初始化menu菜单字典
+menu={'fish':'40','pork':'30','potato':'20','lamb':'50'}
+# 利用values()方法遍历输出值
+for value in menu.values():
+    print('food_price:'+value)
+输出结果：
+
+food_price:40
+
+food_price:30
+
+food_price:20
+
+food_price:50
+
+输出结果表示，values()方法每次都是将menu菜单中的值输出，显示菜的价格。
+
+
+
+Python的列表和字典可以存储任意类型的元素，所以我们可以将字典存储在列表中，也可以将列表存储在字典中，这种操作称为嵌套。
+
+例如，餐馆中的菜单不仅仅包含菜名和价格，可能还会包含很多其他信息，这时候我们可能就需要采取嵌套的存储方式。
+
+本关任务是让学习者利用嵌套方式存储菜单，让读者掌握Python嵌套的基本操作。
+
+相关知识
+列表中存储字典
+餐馆中已经有了3份菜单，每份菜单都会有菜名和价格，我们要将这些信息存储在一起，可以采取如下方法。
+
+将3份菜单用字典的方式存储菜名和价格，然后将这3份菜单字典存储在一个列表中，例如：
+
+# 创建3个菜单字典，包含菜名和价格
+menu1 = {'fish':40, 'pork':30, 'potato':20,'noodles':15}
+menu2 = {'chicken':30, 'corn':55, 'lamb':65,'onion':12}
+menu3 = {'bacon':36, 'beaf':48, 'crab':72,'eggs':7}
+# 将3个菜单字典存储到列表menu_total中
+menu_total = [menu1,menu2,menu3]
+# 输出列表
+print(menu_total)
+输出结果：
+
+[{'fish': 40, 'pork': 30, 'potato': 20, 'noodles': 15}, {'chicken': 30, 'corn': 55, 'lamb': 65, 'onion': 12}, {'bacon': 36, 'beaf': 48, 'crab': 72, 'eggs': 7}]
+
+字典中存储列表
+我们也可以在字典中存储列表，比如我们对于一份菜单，菜名作为键，而值我们想是这道菜的配料，那么我们就可以将这些配料作为列表存储，然后作为值存储在字典中。例如：
+
+# 初始化menu菜单，里面包含配料列表
+menu = {'fish':['vinegar','soy','salt'], 'pork':['sugar','wine']}
+# 输出pork这道菜的配料
+print('The burding of pork is:',menu['pork'])
+输出结果：
+
+The burding of pork is: ['sugar', 'wine']
+
+字典中存储字典
+我们也可以在字典中存储字典，例如我们有一份总菜单，包含2个子菜单，每个子菜单都包含菜名和价格。例如：
+
+# 创建一个字典menu_sum，里面包含两个子菜单字典menu1和menu2
+menu_sum = {
+    'menu1':{'fish':40, 'pork':30, 'potato':20,'noodles':15},
+    'menu2':{'chicken':30, 'corn':55, 'lamb':65,'onion':12}
+}
+# 输出menu1和menu2中的菜名和价格
+print(menu_sum['menu1'])
+print(menu_sum['menu2'])
+输出结果：
+
+{'fish': 40, 'pork': 30, 'potato': 20, 'noodles': 15}
+
+{'chicken': 30, 'corn': 55, 'lamb': 65, 'onion': 12}
+
